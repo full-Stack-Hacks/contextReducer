@@ -1,0 +1,21 @@
+.list {
+  margin-top: 2rem;
+}
+
+.listItem {
+  font-size: 2rem;
+  padding: 0.4rem;
+  border-bottom: 2px dotted var(--black);
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.todoButtons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}

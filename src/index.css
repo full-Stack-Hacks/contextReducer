@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --white: #f0f4ef;
+  --black: #030301;
+  --green: #00d9c0;
+  --red: #ff4365;
+  color: var(--bklack);
+  background: var(--white);
+}
+
+.container {
+  width: 80%;
+  margin: 4rem auto;
+}

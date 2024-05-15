@@ -1,0 +1,26 @@
+.todoInputForm {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.todoInputForm input[type="text"] {
+  border: none;
+  border-bottom: 3px solid var(--black);
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.todoInputForm input[type="text"]:focus {
+  outline: none;
+}
+
+.todoInputForm input[type="submit"] {
+  margin-top: 0.4rem;
+  width: 15%;
+  height: 3rem;
+  background: var(--red);
+  color: var(--white);
+  border: 4px solid var(--black);
+}
