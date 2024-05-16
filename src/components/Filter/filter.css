@@ -1,0 +1,15 @@
+.filterInput {
+  width: 20%;
+  margin: auto;
+  text-align: center;
+}
+
+.filterInput input[type="text"] {
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1.4rem;
+}
+
+.filterInput input[type="text"]:focus {
+  outline: none;
+}

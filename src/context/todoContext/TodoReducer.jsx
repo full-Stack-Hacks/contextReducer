@@ -2,7 +2,8 @@ import Todo from "../../models/todoClass";
 
 export const initialState = {
   todos: [],
-  filtering: false,
+  showFiltered: false,
+  filtered: [],
 };
 
 export function todoReducer(state, action) {
@@ -56,10 +57,26 @@ export function todoReducer(state, action) {
         todos: [...newTodos],
       };
     }
-    case "showFilterForm": {
+    case "hideFilteredList": {
       return {
         ...state,
-        filtering: true,
+        showFiltered: false,
+      };
+    }
+
+    case "showFilteredList": {
+      return {
+        ...state,
+        showFiltered: true,
+      };
+    }
+    case "filterTodos": {
+      return {
+        ...state,
+        filtered: state.todos.filter((todo) => {
+          const regex = new RegExp(`${action.payload.text}`, "gi");
+          return todo.body.match(regex);
+        }),
       };
     }
   }

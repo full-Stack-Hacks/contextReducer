@@ -43,9 +43,24 @@ export const TodoProvider = ({ children }) => {
     });
   };
 
-  const showFilterForm = () => {
+  const showFilteredList = () => {
     dispatch({
-      type: "showFilterForm",
+      type: "showFilteredList",
+    });
+  };
+
+  const hideFilteredList = () => {
+    dispatch({
+      type: "hideFilteredList",
+    });
+  };
+
+  const filterTodos = (text) => {
+    dispatch({
+      type: "filterTodos",
+      payload: {
+        text,
+      },
     });
   };
 
@@ -56,10 +71,13 @@ export const TodoProvider = ({ children }) => {
         deleteTodo,
         toggleEditForm,
         editTodo,
-        showFilterForm,
+        showFilteredList,
+        hideFilteredList,
+        filterTodos,
         todos: state.todos,
+        showFiltered: state.showFiltered,
         showEdit: state.showEdit,
-        filtering: state.filtering,
+        filtered: state.filtered,
       }}
     >
       {children}

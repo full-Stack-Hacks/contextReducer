@@ -1,5 +1,6 @@
 import TodoInput from "./components/TodoInput/TodoInput";
 import Header from "./components/Header/Header";
+import Todos from "./components/Todos/Todos";
 import { TodoProvider } from "./context/todoContext/TodoContext";
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <TodoProvider>
         <Header />
         <TodoInput />
+        <Todos />
       </TodoProvider>
     </div>
   );
