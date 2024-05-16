@@ -1,0 +1,24 @@
+.editForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.editForm input[type="text"] {
+  width: 25%;
+  font-size: 1.4rem;
+  margin-top: 0.4rem;
+  border: none;
+  border-bottom: 2px solid var(--black);
+}
+
+.editForm input[type="text"]:focus {
+  outline: none;
+}
+
+.editForm input[type="submit"] {
+  width: 15%;
+  margin-top: 0.4rem;
+  background: var(--black);
+  color: var(--white);
+  padding: 0.4rem 0.6rem;
+}

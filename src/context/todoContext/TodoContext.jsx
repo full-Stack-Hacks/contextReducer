@@ -33,12 +33,23 @@ export const TodoProvider = ({ children }) => {
     });
   };
 
+  const editTodo = (text, id) => {
+    dispatch({
+      type: "editTodo",
+      payload: {
+        text,
+        id,
+      },
+    });
+  };
+
   return (
     <TodoContext.Provider
       value={{
         addTodo,
         deleteTodo,
         toggleEditForm,
+        editTodo,
         todos: state.todos,
         showEdit: state.showEdit,
       }}

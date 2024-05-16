@@ -1,7 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+// vite.config.js
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import { visualizer } from "rollup-plugin-visualizer";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  plugins: [react(), visualizer()],
+  test: {
+    globals: true,
+    environment: "node", // or 'node' if you're testing Node.js specific code
+  },
+});

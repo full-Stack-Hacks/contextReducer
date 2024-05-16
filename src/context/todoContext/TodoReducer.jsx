@@ -2,7 +2,6 @@ import Todo from "../../models/todoClass";
 
 export const initialState = {
   todos: [],
-  showEdit: false,
 };
 
 export function todoReducer(state, action) {
@@ -29,6 +28,23 @@ export function todoReducer(state, action) {
           return {
             ...todo,
             editing: !todo.editing,
+          };
+        } else {
+          return todo;
+        }
+      });
+      return {
+        ...state,
+        todos: [...newTodos],
+      };
+    }
+    case "editTodo": {
+      const newTodos = state.todos.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return {
+            ...todo,
+            body: action.payload.text,
+            editing: false,
           };
         } else {
           return todo;

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import TodoContext from "../../context/todoContext/TodoContext";
+import TodoEdit from "../TodoEdit/TodoEdit";
 import Button from "../Button/Button";
 
 const TodoItem = ({ body, id, editing }) => {
@@ -22,7 +23,7 @@ const TodoItem = ({ body, id, editing }) => {
           <Button text="Delete" onClick={handleDelete} />
         </div>
       </div>
-      {editing && <h1>Editing</h1>}
+      {editing && <TodoEdit id={id} />}
     </>
   );
 };
