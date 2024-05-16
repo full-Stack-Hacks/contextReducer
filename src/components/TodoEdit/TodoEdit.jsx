@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import TodoContext from "../../context/todoContext/TodoContext";
+import { forceCap } from "../../utils/stringUtils";
 import "./todoEdit.css";
 const TodoEdit = ({ id }) => {
   const { editTodo } = useContext(TodoContext);
@@ -16,7 +17,7 @@ const TodoEdit = ({ id }) => {
     console.log(
       `Send to context to edit todo with text: ${text} and id: ${id}`
     );
-    editTodo(text, id);
+    editTodo(forceCap(text), id);
   };
 
   return (

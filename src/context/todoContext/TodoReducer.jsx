@@ -2,6 +2,7 @@ import Todo from "../../models/todoClass";
 
 export const initialState = {
   todos: [],
+  filtering: false,
 };
 
 export function todoReducer(state, action) {
@@ -44,7 +45,7 @@ export function todoReducer(state, action) {
           return {
             ...todo,
             body: action.payload.text,
-            editing: false,
+            editing: true,
           };
         } else {
           return todo;
@@ -53,6 +54,12 @@ export function todoReducer(state, action) {
       return {
         ...state,
         todos: [...newTodos],
+      };
+    }
+    case "showFilterForm": {
+      return {
+        ...state,
+        filtering: true,
       };
     }
   }

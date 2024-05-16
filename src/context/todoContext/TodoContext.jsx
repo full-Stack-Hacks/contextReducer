@@ -43,6 +43,12 @@ export const TodoProvider = ({ children }) => {
     });
   };
 
+  const showFilterForm = () => {
+    dispatch({
+      type: "showFilterForm",
+    });
+  };
+
   return (
     <TodoContext.Provider
       value={{
@@ -50,8 +56,10 @@ export const TodoProvider = ({ children }) => {
         deleteTodo,
         toggleEditForm,
         editTodo,
+        showFilterForm,
         todos: state.todos,
         showEdit: state.showEdit,
+        filtering: state.filtering,
       }}
     >
       {children}
